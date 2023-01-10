@@ -4,17 +4,19 @@
 #include <Adafruit_Sensor.h>
 #include <DHT.h>
 #include <DHT_U.h>
-#define DHTPIN 2    
-#define DHTTYPE    DHT22    
-DHT_Unified dht(DHTPIN, DHTTYPE);
-
-// Define the pins that we will use
 #define SENSOR 33
 #define LED 26
+
+#define DHTTYPE    DHT11   
+DHT_Unified dht(SENSOR, DHTTYPE);
+
+
+
 
 void setup() {
   // put your setup code here, to run once:
   pinMode(LED, OUTPUT);
+  Serial.begin(9600);
 
   // Print temperature sensor details.
   sensor_t sensor;
